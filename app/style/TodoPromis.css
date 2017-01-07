@@ -1,0 +1,7 @@
+.todo-list li.resolve{
+    background-color: rgb(230, 230, 230);
+}
+
+.todo-list li.resolve span.lt-icon{
+    background-color: rgb(179, 179, 179);
+}

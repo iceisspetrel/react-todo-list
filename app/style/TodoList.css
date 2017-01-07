@@ -1,0 +1,69 @@
+.todo-list{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.todo-list h2{
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.todo-list h2 .count{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: #E6E6FA;
+    color: #666;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.6rem;
+}
+
+.todo-list li{
+    height: 3.2rem;
+    line-height: 3.2rem;
+    position: relative;
+    padding: 0 4.5rem;
+    font-size: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #FFF;
+    border-radius: .4rem;
+    margin-bottom: .1rem;
+}
+
+.todo-list li span{
+    display: inline;
+    height: 3.2rem;
+    position: absolute;
+}
+
+.todo-list li input{
+    position: absolute;
+    top: .3rem;
+    left: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+}
+
+.todo-list li span.lt-icon{
+    left: 0;
+    top: 0;
+    background-color: rgb(106, 163, 198);
+    width: 7px;
+}
+
+.todo-list li span.remove-icon{
+    width: 2.4rem;
+    height: 2.4rem;
+    top: 50%;
+    margin-top: -1.1rem;
+    right: 1rem;
+    cursor: pointer;
+    background: url('../img/remove.png') no-repeat;
+}

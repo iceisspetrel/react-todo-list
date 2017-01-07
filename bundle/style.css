@@ -1,0 +1,138 @@
+html{
+    font-size: 62.5%;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    background-color: rgb(205, 205, 205);
+}
+
+ul, li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.white{
+    background-color: #FFF !important;
+    position: fixed;
+    left: 0;
+    top: 6rem;
+}
+.header-space{
+    height: 5rem;
+    width: 100%;
+}
+
+.header-bg{
+    height: 5rem;
+    width: 100%;
+    background-color: #000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.header-bg .header-main{
+    width: 60%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.header-bg .header-name{
+    line-height: 5rem;
+    font-size: 2.4rem;
+    color: #DDD;
+    cursor: pointer;
+    width: 10rem;
+    vertical-align: middle;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.header-bg .header-add{
+    float: right;
+    width: calc(100% - 120px);
+    height: 2.4rem;
+    margin-top: 1.2rem;
+    text-indent: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.1rem 0 rgba(255,255,255,0.24), 0 0.1rem 0.1rem rgba(0,0,0,0.45) inset;
+    border: none;
+}
+.todo-list{
+    width: 60%;
+    margin: 0 auto;
+}
+
+.todo-list h2{
+    position: relative;
+    font-size: 1.8rem;
+}
+
+.todo-list h2 .count{
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background-color: #E6E6FA;
+    color: #666;
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.6rem;
+}
+
+.todo-list li{
+    height: 3.2rem;
+    line-height: 3.2rem;
+    position: relative;
+    padding: 0 4.5rem;
+    font-size: 1.6rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #FFF;
+    border-radius: .4rem;
+    margin-bottom: .1rem;
+}
+
+.todo-list li span{
+    display: inline;
+    height: 3.2rem;
+    position: absolute;
+}
+
+.todo-list li input{
+    position: absolute;
+    top: .3rem;
+    left: 1rem;
+    width: 2.2rem;
+    height: 2.2rem;
+    cursor: pointer;
+}
+
+.todo-list li span.lt-icon{
+    left: 0;
+    top: 0;
+    background-color: rgb(106, 163, 198);
+    width: 7px;
+}
+
+.todo-list li span.remove-icon{
+    width: 2.4rem;
+    height: 2.4rem;
+    top: 50%;
+    margin-top: -1.1rem;
+    right: 1rem;
+    cursor: pointer;
+    background: url(./bundle/assets/2d8d7c8fde02e67b.remove.png) no-repeat;
+}
+.todo-list li.resolve{
+    background-color: rgb(230, 230, 230);
+}
+
+.todo-list li.resolve span.lt-icon{
+    background-color: rgb(179, 179, 179);
+}
