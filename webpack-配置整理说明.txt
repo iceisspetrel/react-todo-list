@@ -1,0 +1,45 @@
+#全局魔法变量的使用
+    1、webpack.config.js的配置写法
+        var env = process.env.NODE_ENV;
+        new webpack.DefinePlugin({
+            "process.env" : {
+                "NODE_ENV" : JSON.stringify(env)
+            }
+        });
+    2、打包方式
+        NODE_ENV=production webapck
+        NODE_ENV=production webpack-dev-server
+
+        如果是通过npm run的方式打包,package.json的scripts中应该：
+            set NODE_ENV=production&& webpack
+            set NODE_ENV=production&& webpack-dev-server //production后不能有空格
+    3、可以在process.env下设置任意变量，webapck在打包时会自动替换为打包时传入的值，例如
+        打包前 if(process.env.NODE_ENV == 'production')
+        打包后 if(('production') == 'production')
+
+#webpack.optimize.CommonsChunkPlugin 提取公共包的用法
+    1、基本入参
+        new webpack.optimize.CommonsChunkPlugin({
+            names : ['common', 'util']//数组元素为希望webpack整理哪些公共包出来
+        })
+
+    2、在entry中配置相应的公共包
+        entry : {
+            //key对应 webpack.optimize.CommonsChunkPlugin中的 names
+            //value 对应打入该包的模块
+            common : ['react', 'react-dom'],
+            util : ['underscore', 'jquery', './app/util/util.js'] //例如
+        },
+        output : {
+            filename : '[name].js'
+            //此处不能指定固定的输出文件名，应该使用变量替换[name] [hash:13] [id]等变量替换
+            //例如entry中的common打包后会输出common.js
+        }
+
+#webpack.ProvidePlugin的使用
+    new webpack.ProvidePlugin({
+        $ : 'jquery',
+        _ : 'underscore'
+    });
+    在开发时可以不用每次都以模块的方式引入第三方库，在此处添加配置即可
+    代码中直接使用 $、_
